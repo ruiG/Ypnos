@@ -5,42 +5,39 @@ using System.Collections.Generic;
 public class LevelGenerator : MonoBehaviour {
 
 	//Prefabs
-	public Transform endPointPref; //has 1 cp_l
-	public Transform startPointPref; //has 1 cp_r
-	public Transform corridorPref; //has both a cp_l and cp_r
-
+	public List<Transform> startPrefabList;
+	public List<Transform> endPrefabList;
+	public List<Transform> prefabList;
+	public int levelSize;
 
 	//References to the instantiated clones
 	private Transform levelStart;
 	private Transform levelEnd;
-	private ArrayList level;
-	private List<Transform> prefabList;
+	private List<Transform> level;
+
+
 
 	void Start () {
-
-		prefabList = new List<Transform>();
-		prefabList.Add (startPointPref);
-		prefabList.Add (endPointPref);
-		prefabList.Add (corridorPref);
-
-		generateLevel (3);
-//		levelStart = (Transform) Instantiate(startPointPref, new Vector3 (0, 0, 0), Quaternion.identity);
-//		//levelEnd = (Transform) Instantiate(endPointPref, new Vector3 (0, 0, 0), Quaternion.identity);
-//		levelPiece = (Transform) Instantiate(corridorPref, new Vector3 (0, 0, 0), Quaternion.identity);
-//		//levelPiece2 = (Transform) Instantiate(corridorPref, new Vector3 (0, 0, 0), Quaternion.identity);
-//
-//		Vector3 cpLeftNewPiece = levelStart.transform.FindChild ("cp_r").transform.position;
-//
-//		levelStart.position = level.transform.FindChild ("cp_l").transform.position - cpLeftNewPiece;
-
+		level = new List<Transform> ();
+		generateLevel (levelSize);
 	}
 
 	void generateLevel(int size){
-		Transform piece = (Transform) Instantiate(prefabList[0], new Vector3 (0, 0, 0), Quaternion.identity);
+		Transform piece = (Transform) Instantiate(startPrefabList[0], new Vector3 (0, 0, 0), Quaternion.identity);
 
-		for (int i = 0; i <= size; i++) {
+		levelStart = piece; //referece to the Start Piece
+
+		level.Add (piece); //add the piece to the level Array
+
+		for (int i = 0; i < size; i++) {
 			piece = generateNextPiece(piece);
+			level.Add (piece); //add the piece to the level Arra
 		}
+
+
+		//define ---- Level End -----
+
+
 	}
 
 	Transform generateNextPiece(Transform prev){
@@ -48,18 +45,33 @@ public class LevelGenerator : MonoBehaviour {
 		List<Transform> controlPoints = getAllControlPoints (prev);
 		//randomly choose cp to connect
 		Transform cp = getRandomCPofType (controlPoints);
+
+		int pos;
+		Transform newPiece, cpNewPiece;
+		string ct;
 		//choose prefab to connect
-		int pos = Random.Range (2, prefabList.Count - 1);
-		Transform newPiece = (Transform) Instantiate (prefabList[pos], new  Vector3 (0, 0, 0), Quaternion.identity);
 
-		//AQUI VAI DAR POIO 
-	
-		Transform cpNewPiece = newPiece.transform.FindChild (connectTo(cp));
+		do{
+			pos = Random.Range (0, prefabList.Count);
+			Debug.Log ("Chosen piece: "+ pos + "/" + (prefabList.Count - 1));
+			newPiece = (Transform) Instantiate (prefabList[pos], new  Vector3 (0, 0, 0), Quaternion.identity);
 
+			ct = connectTo (cp);
+			cpNewPiece = newPiece.transform.Find(ct);
+
+			if (cpNewPiece == null) {
+				Debug.Log ("Connection inpossible! Trying other piece...");
+				Destroy(newPiece.gameObject);
+			}
+		}while(cpNewPiece == null);
+
+
+		//translate to correct position
 		newPiece.position = cp.position - cpNewPiece.position;
 
-		cpNewPiece.GetComponent<ControlPoint>().connected = true;
-		cp.GetComponent<ControlPoint>().connected = true;
+		//mark moth connecting point as connected
+		cpNewPiece.gameObject.GetComponent<ControlPoint>().connected = true;
+		cp.gameObject.GetComponent<ControlPoint> ().connected = true;
 
 		return newPiece;
 	}
@@ -70,8 +82,9 @@ public class LevelGenerator : MonoBehaviour {
 		List<Transform> cps = new List<Transform>(); 
 		Debug.Log (t.GetChild(0).tag);
 		foreach (Transform child in t){
-			if (child.tag == "cp" && child.GetComponent<ControlPoint>().connected == false)
-				cps.Add(child);
+			ControlPoint cpProp = child.GetComponent<ControlPoint>();
+			if (child.tag == "cp" && cpProp.connected == false)
+				cps.Add(child);			
 		}
 		Debug.Log ("Number of CPs: "+ cps.Count);
 		return cps;	
@@ -79,11 +92,12 @@ public class LevelGenerator : MonoBehaviour {
 
 	Transform getRandomCPofType(List<Transform> cp){
 		Debug.Log ("Size: "+ cp.Count);
-		int pos = Random.Range (0, cp.Count - 1);
+		int pos = Random.Range (0, cp.Count);
 		return cp [pos];		
 	}
 
 	static string connectTo(Transform cp){
+		Debug.Log (cp.name);
 		switch(cp.name){
 		case "cp_r":
 			return "cp_l";
@@ -94,7 +108,7 @@ public class LevelGenerator : MonoBehaviour {
 		case "cp_b":
 			return "cp_t";
 		default:
-			return "";
+			return "invalid";
 		}
 	}
 	
