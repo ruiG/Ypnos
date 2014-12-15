@@ -15,8 +15,6 @@ public class LevelGenerator : MonoBehaviour {
 	private Transform levelEnd;
 	private List<Transform> level;
 
-
-
 	void Start () {
 		level = new List<Transform> ();
 		generateLevel (levelSize);
@@ -34,8 +32,8 @@ public class LevelGenerator : MonoBehaviour {
 			level.Add (piece); //add the piece to the level Arra
 		}
 
+		int end = Random.Range (0, level.Count);
 
-		//define ---- Level End -----
 
 
 	}

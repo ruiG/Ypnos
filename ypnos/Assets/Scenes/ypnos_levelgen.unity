@@ -122,7 +122,8 @@ MonoBehaviour:
   prefabList:
   - {fileID: 400004, guid: b79446f973c05447e87a83c238062cb3, type: 2}
   - {fileID: 400008, guid: a798215b8af2e4e76b80b14a12192ce4, type: 2}
-  levelSize: 5
+  - {fileID: 400008, guid: f049299c58e4740e0a46c0baaf6b2a72, type: 2}
+  levelSize: 100
 --- !u!1 &1676529125
 GameObject:
   m_ObjectHideFlags: 0
