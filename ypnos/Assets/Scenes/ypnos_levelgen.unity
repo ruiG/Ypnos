@@ -113,9 +113,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 684c1f2ecd858422baed4cc92f435493, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  endPointPref: {fileID: 400002, guid: 10d1c36324863443c8c7bcda369243e8, type: 2}
-  startPointPref: {fileID: 400002, guid: 6c928244f2d7c4b538cc95d25a260281, type: 2}
-  corridorPref: {fileID: 400004, guid: b79446f973c05447e87a83c238062cb3, type: 2}
+  startPrefabList:
+  - {fileID: 400002, guid: 6c928244f2d7c4b538cc95d25a260281, type: 2}
+  - {fileID: 400002, guid: 35aeb777f9514452eb058f52f9453d8b, type: 2}
+  endPrefabList:
+  - {fileID: 400002, guid: 10d1c36324863443c8c7bcda369243e8, type: 2}
+  - {fileID: 400002, guid: cdb5d91ed8a404fa89e68e619c99ee33, type: 2}
+  prefabList:
+  - {fileID: 400004, guid: b79446f973c05447e87a83c238062cb3, type: 2}
+  - {fileID: 400008, guid: a798215b8af2e4e76b80b14a12192ce4, type: 2}
+  levelSize: 5
 --- !u!1 &1676529125
 GameObject:
   m_ObjectHideFlags: 0
@@ -165,7 +172,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: .192156866, g: .301960796, b: .474509805, a: .0196078438}
+  m_BackGroundColor: {r: .29411763, g: .29411763, b: .29411763, a: .0196078438}
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
@@ -176,7 +183,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 20.0184574
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
