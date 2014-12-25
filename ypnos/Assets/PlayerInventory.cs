@@ -5,10 +5,9 @@ using System.Collections.Generic;
 public class PlayerInventory : MonoBehaviour {
 
 	void OnTriggerStay2D(Collider2D other){
-		Debug.Log ("collision");
-		if (Input.GetKey (KeyCode.E)) {
+		if (Input.GetKey (KeyCode.E) ||  Input.GetKey( KeyCode.Joystick1Button1)) {
 			Item cenas = new Item(other.name, other.GetComponent<SpriteRenderer>().sprite);
-			GameObject.Find("GUI").GetComponent< GUI>().AddItem(cenas);
+			GameObject.Find("GUI").GetComponent<GUI>().AddItem(cenas);
 			Destroy(other.gameObject);
 		}
 	}
