@@ -18,6 +18,9 @@ public class GUI : MonoBehaviour {
 		GameObject coiso = new GameObject();
 		coiso.AddComponent< SpriteRenderer> ();
 		coiso.GetComponent< SpriteRenderer>().sprite = item.getSprite();
+		coiso.transform.parent = GameObject.Find ("GUI").transform;
+		coiso.transform.position = new Vector3 (-7,-4,0);
+
 		coiso.renderer.enabled = true;
 	}
 }
