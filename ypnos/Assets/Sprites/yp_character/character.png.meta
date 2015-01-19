@@ -1,0 +1,300 @@
+fileFormatVersion: 2
+guid: 6930db44f4e17487384e25d042840f54
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: head_front
+    21300002: head_side_l
+    21300004: eye_iris_l
+    21300006: eye_iris_right
+    21300008: mouth_smile
+    21300010: left_eye
+    21300012: right_eye
+    21300014: mouth_close
+    21300016: body_side
+    21300018: body_side_l
+    21300020: mouth_sad
+    21300022: head_side
+    21300024: mouth_side
+    21300026: mouth_side_l
+    21300028: body_front
+    21300030: character_17
+    21300032: character_18
+    21300034: arm_top
+    21300036: arm_bottom
+    21300038: character_21
+    21300040: character_22
+    21300042: leg_top
+    21300044: leg_bottom
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -3
+  maxTextureSize: 4096
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 300
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: head_front
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 3759
+        width: 811
+        height: 664
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: head_side_l
+      rect:
+        serializedVersion: 2
+        x: 1384
+        y: 3757
+        width: 505
+        height: 667
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: eye_iris_l
+      rect:
+        serializedVersion: 2
+        x: 2160
+        y: 4324
+        width: 72
+        height: 77
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: eye_iris_right
+      rect:
+        serializedVersion: 2
+        x: 2446
+        y: 4316
+        width: 67
+        height: 67
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mouth_smile
+      rect:
+        serializedVersion: 2
+        x: 2721
+        y: 4254
+        width: 383
+        height: 127
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: left_eye
+      rect:
+        serializedVersion: 2
+        x: 2111
+        y: 4052
+        width: 200
+        height: 229
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: right_eye
+      rect:
+        serializedVersion: 2
+        x: 2407
+        y: 4093
+        width: 167
+        height: 159
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mouth_close
+      rect:
+        serializedVersion: 2
+        x: 2744
+        y: 4144
+        width: 324
+        height: 45
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: body_side
+      rect:
+        serializedVersion: 2
+        x: 3355
+        y: 3777
+        width: 298
+        height: 524
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: body_side_l
+      rect:
+        serializedVersion: 2
+        x: 3784
+        y: 3777
+        width: 297
+        height: 524
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mouth_sad
+      rect:
+        serializedVersion: 2
+        x: 2731
+        y: 3961
+        width: 339
+        height: 112
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: head_side
+      rect:
+        serializedVersion: 2
+        x: 1259
+        y: 2772
+        width: 504
+        height: 669
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mouth_side
+      rect:
+        serializedVersion: 2
+        x: 2317
+        y: 3253
+        width: 221
+        height: 129
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mouth_side_l
+      rect:
+        serializedVersion: 2
+        x: 2607
+        y: 3253
+        width: 220
+        height: 129
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: body_front
+      rect:
+        serializedVersion: 2
+        x: 3259
+        y: 2856
+        width: 441
+        height: 526
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: character_17
+      rect:
+        serializedVersion: 2
+        x: 1059
+        y: 1947
+        width: 320
+        height: 446
+      alignment: 9
+      pivot: {x: .800666034, y: .957597256}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: character_18
+      rect:
+        serializedVersion: 2
+        x: 1583
+        y: 1936
+        width: 322
+        height: 457
+      alignment: 9
+      pivot: {x: .192147017, y: .959342837}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: arm_top
+      rect:
+        serializedVersion: 2
+        x: 2354
+        y: 2212
+        width: 135
+        height: 198
+      alignment: 9
+      pivot: {x: .934874117, y: .845454514}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: arm_bottom
+      rect:
+        serializedVersion: 2
+        x: 2285
+        y: 1991
+        width: 112
+        height: 221
+      alignment: 9
+      pivot: {x: .817035735, y: .972171605}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: character_21
+      rect:
+        serializedVersion: 2
+        x: 3329
+        y: 2168
+        width: 365
+        height: 272
+      alignment: 8
+      pivot: {x: 1, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: character_22
+      rect:
+        serializedVersion: 2
+        x: 3728
+        y: 2168
+        width: 363
+        height: 272
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: leg_top
+      rect:
+        serializedVersion: 2
+        x: 550
+        y: 1199
+        width: 46
+        height: 215
+      alignment: 9
+      pivot: {x: .440989614, y: .964228868}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: leg_bottom
+      rect:
+        serializedVersion: 2
+        x: 556
+        y: 984
+        width: 59
+        height: 216
+      alignment: 9
+      pivot: {x: .27616781, y: .968388319}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
