@@ -120,7 +120,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 0, a: 1}
+  m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
   m_Type: 1
   m_PreserveAspect: 0
@@ -145,6 +145,7 @@ GameObject:
   - 224: {fileID: 166468304}
   - 222: {fileID: 166468303}
   - 114: {fileID: 166468302}
+  - 95: {fileID: 166468305}
   m_Layer: 5
   m_Name: Music
   m_TagString: Untagged
@@ -201,6 +202,21 @@ RectTransform:
   m_AnchoredPosition: {x: -126, y: 13}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: .5, y: .5}
+--- !u!95 &166468305
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 166468301}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1fb52469298ae1d408be243cb1bbf131, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 1
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &199626454
 GameObject:
   m_ObjectHideFlags: 0
@@ -339,6 +355,7 @@ GameObject:
   - 223: {fileID: 388589752}
   - 114: {fileID: 388589751}
   - 114: {fileID: 388589750}
+  - 114: {fileID: 388589753}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -430,6 +447,17 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
+--- !u!114 &388589753
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 388589748}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8543e5bd86fd4ac4a8f96020b2a72ad8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &424301749
 GameObject:
   m_ObjectHideFlags: 0
@@ -506,6 +534,7 @@ GameObject:
   - 224: {fileID: 458519794}
   - 222: {fileID: 458519796}
   - 114: {fileID: 458519795}
+  - 95: {fileID: 458519797}
   m_Layer: 5
   m_Name: Difficulty
   m_TagString: Untagged
@@ -562,6 +591,21 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 458519793}
+--- !u!95 &458519797
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 458519793}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 0d6143d9fab6b4940b3c6993d7904af0, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 1
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &491825507
 GameObject:
   m_ObjectHideFlags: 0
@@ -820,6 +864,7 @@ GameObject:
   - 224: {fileID: 982853592}
   - 222: {fileID: 982853594}
   - 114: {fileID: 982853593}
+  - 95: {fileID: 982853595}
   m_Layer: 5
   m_Name: Mode
   m_TagString: Untagged
@@ -876,6 +921,21 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 982853591}
+--- !u!95 &982853595
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 982853591}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 44382617d8895164f8c5d534e38b4a88, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 1
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &1187135865
 GameObject:
   m_ObjectHideFlags: 0
@@ -1175,6 +1235,7 @@ GameObject:
   - 224: {fileID: 1498584933}
   - 222: {fileID: 1498584935}
   - 114: {fileID: 1498584934}
+  - 95: {fileID: 1498584936}
   m_Layer: 5
   m_Name: Volume
   m_TagString: Untagged
@@ -1231,6 +1292,21 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1498584932}
+--- !u!95 &1498584936
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1498584932}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 84a27ecb69008b945b508d1ec01f49f1, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 1
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &1567677255
 GameObject:
   m_ObjectHideFlags: 0
@@ -1633,7 +1709,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: .203921571, a: 1}
+  m_Color: {r: 1, g: .203921556, b: .203921556, a: 1}
   m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
   m_Type: 0
   m_PreserveAspect: 0
@@ -1660,7 +1736,7 @@ GameObject:
   - 114: {fileID: 1836924813}
   - 95: {fileID: 1836924815}
   m_Layer: 5
-  m_Name: Off_music
+  m_Name: Off_Music
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
