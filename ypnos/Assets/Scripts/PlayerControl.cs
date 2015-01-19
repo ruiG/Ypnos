@@ -21,6 +21,7 @@ public class PlayerControl : MonoBehaviour
 	private int tauntIndex;					// The index of the taunts array indicating the most recent taunt.
 	private Transform groundCheck;			// A position marking where to check if the player is grounded.
 	private bool grounded = false;			// Whether or not the player is grounded.
+	private bool attack = false;
 	private Animator anim;					// Reference to the player's animator component.
 
 
@@ -28,7 +29,7 @@ public class PlayerControl : MonoBehaviour
 	{
 		// Setting up references.
 		groundCheck = transform.Find("groundCheck");
-		anim = GetComponent<Animator>();
+		anim = transform.Find("character_rig").GetComponent<Animator>();
 	}
 
 
@@ -40,6 +41,9 @@ public class PlayerControl : MonoBehaviour
 		// If the jump button is pressed and the player is grounded then the player should jump.
 		if(Input.GetButtonDown("Jump") && grounded)
 			jump = true;
+
+		if(Input.GetButtonDown("Attack"))
+			attack = true;
 	}
 
 
@@ -85,6 +89,22 @@ public class PlayerControl : MonoBehaviour
 
 			// Make sure the player can't jump again until the jump conditions from Update are satisfied.
 			jump = false;
+		}
+
+		if(attack)
+		{
+			// Set the Jump animator trigger parameter.
+			anim.SetTrigger("Attack");
+			
+			// Play a random jump audio clip.
+			//int i = Random.Range(0, jumpClips.Length);
+			//AudioSource.PlayClipAtPoint(jumpClips[i], transform.position);
+			
+			// Add a vertical force to the player.
+			//rigidbody2D.AddForce(new Vector2(0f, jumpForce));
+			
+			// Make sure the player can't jump again until the jump conditions from Update are satisfied.
+			attack = false;
 		}
 	}
 	
