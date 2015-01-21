@@ -17,10 +17,7 @@ Global
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
-																					GlobalSection(MonoDevelopProperties) = preSolution
-=======
-		GlobalSection(MonoDevelopProperties) = preSolution
->>>>>>> dd44f8d30e549cdf2ce113e1b53b9415c1b3f0c9:ypnos/Ypnos.sln
+	GlobalSection(MonoDevelopProperties) = preSolution
 		StartupItem = Assembly-CSharp.csproj
 		Policies = $0
 		$0.TextStylePolicy = $1
