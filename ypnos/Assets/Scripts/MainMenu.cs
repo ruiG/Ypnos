@@ -32,6 +32,9 @@ public class MainMenu : MonoBehaviour {
 				} else if (Input.GetAxis ("Vertical") < 0) {
 						animationStart.SetBool ("selectStart", false);
 						animationOptions.SetBool ("selectOptions", true);
+				} else if(Input.GetButton("Attack"))
+				{
+					Application.LoadLevel("Level");
 				}
 			} else if (animationOptions.GetBool ("selectOptions")) {
 				Debug.Log ("Options Selected");
@@ -41,7 +44,7 @@ public class MainMenu : MonoBehaviour {
 				} else if (Input.GetAxis ("Vertical") < 0) {
 						animationOptions.SetBool ("selectOptions", false);
 						animationExit.SetBool ("selectExit", true);
-				} else if(Input.GetKey(KeyCode.KeypadEnter))
+				} else if(Input.GetButton("Attack"))
 				{
 					Application.LoadLevel("OptionsMenu");
 				}
@@ -54,6 +57,9 @@ public class MainMenu : MonoBehaviour {
 				} else if (Input.GetAxis ("Vertical") < 0) {
 						animationExit.SetBool ("selectExit", false);
 						animationStart.SetBool ("selectStart", true);
+				} else if(Input.GetButton("Attack"))
+				{
+					Application.LoadLevel("ExitMenu");
 				}
 			}
 			timer = 0.2f;

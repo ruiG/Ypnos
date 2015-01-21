@@ -5,10 +5,10 @@ AnimatorController:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: Exit_No
+  m_Name: Cancel
   serializedVersion: 2
   m_AnimatorParameters:
-  - m_Name: selectedNo
+  - m_Name: selectCancel
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
@@ -17,7 +17,7 @@ AnimatorController:
   m_AnimatorLayers:
   - serializedVersion: 3
     m_Name: Base Layer
-    m_StateMachine: {fileID: 110755986}
+    m_StateMachine: {fileID: 110796390}
     m_Mask: {fileID: 0}
     m_BlendingMode: 0
     m_SyncedLayerIndex: -1
@@ -26,98 +26,98 @@ AnimatorController:
     m_IKPass: 0
     m_SyncedLayerAffectsTiming: 0
     m_Controller: {fileID: 9100000}
---- !u!1101 &110145880
+--- !u!1101 &110107890
 Transition:
   serializedVersion: 2
   m_ObjectHideFlags: 3
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: 
-  m_SrcState: {fileID: 110227894}
-  m_DstState: {fileID: 110255986}
+  m_SrcState: {fileID: 110268954}
+  m_DstState: {fileID: 110296390}
   m_TransitionDuration: 1.5
   m_TransitionOffset: 0
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: selectedNo
+    m_ConditionEvent: selectCancel
     m_EventTreshold: 0
     m_ExitTime: 0
   m_Atomic: 1
   m_Solo: 0
   m_Mute: 0
   m_CanTransitionToSelf: 0
---- !u!1101 &110194406
+--- !u!1101 &110189518
 Transition:
   serializedVersion: 2
   m_ObjectHideFlags: 3
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: 
-  m_SrcState: {fileID: 110255986}
-  m_DstState: {fileID: 110227894}
+  m_SrcState: {fileID: 110296390}
+  m_DstState: {fileID: 110268954}
   m_TransitionDuration: .300000012
   m_TransitionOffset: 0
   m_Conditions:
   - m_ConditionMode: 2
-    m_ConditionEvent: selectedNo
+    m_ConditionEvent: selectCancel
     m_EventTreshold: 0
     m_ExitTime: .699999988
   m_Atomic: 1
   m_Solo: 0
   m_Mute: 0
   m_CanTransitionToSelf: 0
---- !u!1102 &110227894
+--- !u!1102 &110268954
 State:
   m_ObjectHideFlags: 3
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: unselectedNoExit
+  m_Name: unselectedCancel
   m_Speed: 1
   m_CycleOffset: 0
   m_Motions:
-  - {fileID: 7400000, guid: 0f6f51f1e82528c4b9ac1dcbf8357328, type: 2}
-  m_ParentStateMachine: {fileID: 110755986}
-  m_Position: {x: 228, y: 108, z: 0}
+  - {fileID: 7400000, guid: f3646f7e5322e4e459abf7085d1b9189, type: 2}
+  m_ParentStateMachine: {fileID: 110796390}
+  m_Position: {x: 216, y: 120, z: 0}
   m_IKOnFeet: 0
   m_Mirror: 0
   m_Tag: 
---- !u!1102 &110255986
+--- !u!1102 &110296390
 State:
   m_ObjectHideFlags: 3
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: selectionNoExit
+  m_Name: selectionCancel
   m_Speed: 1
   m_CycleOffset: 0
   m_Motions:
-  - {fileID: 7400000, guid: f7f8194581a60a3478af8f6214cbafc0, type: 2}
-  m_ParentStateMachine: {fileID: 110755986}
-  m_Position: {x: -36, y: 108, z: 0}
+  - {fileID: 7400000, guid: ad17a2e6f0995d041a829e65bfbedb1e, type: 2}
+  m_ParentStateMachine: {fileID: 110796390}
+  m_Position: {x: -72, y: 120, z: 0}
   m_IKOnFeet: 0
   m_Mirror: 0
   m_Tag: 
---- !u!1107 &110755986
+--- !u!1107 &110796390
 StateMachine:
   serializedVersion: 2
   m_ObjectHideFlags: 3
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: Base Layer
-  m_DefaultState: {fileID: 110255986}
+  m_DefaultState: {fileID: 110296390}
   m_States:
-  - {fileID: 110255986}
-  - {fileID: 110227894}
+  - {fileID: 110296390}
+  - {fileID: 110268954}
   m_ChildStateMachine: []
   m_ChildStateMachinePosition: []
   m_OrderedTransitions:
     data:
-      first: {fileID: 110227894}
+      first: {fileID: 110268954}
       second:
-      - {fileID: 110145880}
+      - {fileID: 110107890}
     data:
-      first: {fileID: 110255986}
+      first: {fileID: 110296390}
       second:
-      - {fileID: 110194406}
+      - {fileID: 110189518}
   m_MotionSetCount: 1
   m_AnyStatePosition: {x: 50, y: 20, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}

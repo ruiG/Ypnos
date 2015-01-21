@@ -13,6 +13,10 @@ public class OptionsMenu : MonoBehaviour {
 	protected Animator animationVolume;
 	protected Animator animationDifficulty;
 	protected Animator animationMode;
+	protected Animator animationApply;
+	protected Animator animationCancel;
+	protected AudioSource musicAudio;
+	protected UnityEngine.UI.Slider volume;
 	
 	private float timer = 0.2f;
 
@@ -28,10 +32,16 @@ public class OptionsMenu : MonoBehaviour {
 		animationVolume = GameObject.Find("Volume").GetComponent<Animator >();
 		animationDifficulty = GameObject.Find("Difficulty").GetComponent<Animator >();
 		animationMode = GameObject.Find("Mode").GetComponent<Animator >();
+		animationApply = GameObject.Find("Apply").GetComponent<Animator >();
+		animationCancel = GameObject.Find("Cancel").GetComponent<Animator >();
+		musicAudio = GameObject.Find("Main Camera").GetComponent<AudioSource >();
+		volume = GameObject.Find("Slider").GetComponent<UnityEngine.UI.Slider >();
 		animationMusic.SetBool("selectedMusic", true);
 		animationOnMusic.SetBool("selectedOnMusic", true);
 		animationNoobDif.SetBool("selectedNoob", true);
 		animationWindow.SetBool("selectedWindow", true);
+
+		LoadOptions ();
 	
 	}
 	
@@ -46,7 +56,7 @@ public class OptionsMenu : MonoBehaviour {
 				Debug.Log ("Music Selected");
 				if (Input.GetAxis ("Vertical") > 0) {
 					animationMusic.SetBool ("selectedMusic", false);
-					animationMode.SetBool ("selectedMode", true);
+					animationCancel.SetBool ("selectCancel", true);
 				} else if (Input.GetAxis ("Vertical") < 0) {
 					animationMusic.SetBool ("selectedMusic", false);
 					animationVolume.SetBool ("selectedVolume", true);
@@ -57,6 +67,13 @@ public class OptionsMenu : MonoBehaviour {
 					animationOffMusic.SetBool ("selectedOffMusic", true);
 					animationOnMusic.SetBool ("selectedOnMusic", false);
 				}
+				if(animationOnMusic.GetBool("selectedOnMusic"))
+				{
+					musicAudio.mute = false;
+				} else if(animationOffMusic.GetBool("selectedOffMusic"))
+				{
+					musicAudio.mute = true;
+				}
 
 			} else if (animationVolume.GetBool ("selectedVolume")) {
 				Debug.Log ("Volume Selected");
@@ -66,7 +83,10 @@ public class OptionsMenu : MonoBehaviour {
 				} else if (Input.GetAxis ("Vertical") < 0) {
 					animationVolume.SetBool ("selectedVolume", false);
 					animationDifficulty.SetBool ("selectedDifficulty", true);
-				} 			
+				} else if(Input.GetAxis ("Horizontal") < 0){
+					volume.value-=0.05f;
+				} else if(Input.GetAxis ("Horizontal") > 0){
+				}		
 			} else if (animationDifficulty.GetBool ("selectedDifficulty")) {
 				Debug.Log ("Difficulty Selected");
 				if (Input.GetAxis ("Vertical") > 0) {
@@ -89,7 +109,7 @@ public class OptionsMenu : MonoBehaviour {
 					animationDifficulty.SetBool ("selectedDifficulty", true);
 				} else if (Input.GetAxis ("Vertical") < 0) {
 					animationMode.SetBool ("selectedMode", false);
-					animationMusic.SetBool ("selectedMusic", true);
+					animationApply.SetBool ("selectApply", true);
 				} else if(Input.GetAxis ("Horizontal") < 0){
 					animationWindow.SetBool ("selectedWindow", true);
 					animationFullscreen.SetBool ("selectedFullscreen", false);
@@ -97,9 +117,52 @@ public class OptionsMenu : MonoBehaviour {
 					animationFullscreen.SetBool ("selectedFullscreen", true);
 					animationWindow.SetBool ("selectedWindow", false);
 				}
+			} else if (animationApply.GetBool ("selectApply")) {
+				Debug.Log ("Apply Selected");
+				if (Input.GetAxis ("Vertical") > 0) {
+					animationApply.SetBool ("selectApply", false);
+					animationMode.SetBool ("selectedMode", true);
+				} else if (Input.GetAxis ("Vertical") < 0) {
+					animationApply.SetBool ("selectApply", false);
+					animationCancel.SetBool ("selectCancel", true);
+				} else if(Input.GetButton("Attack")){
+					SaveOptions();
+					Application.LoadLevel("MainMenu");
+				}
+			} else if (animationCancel.GetBool ("selectCancel")) {
+				Debug.Log ("Cancel Selected");
+				if (Input.GetAxis ("Vertical") > 0) {
+					animationCancel.SetBool ("selectCancel", false);
+					animationApply.SetBool ("selectApply", true);
+				} else if (Input.GetAxis ("Vertical") < 0) {
+					animationCancel.SetBool ("animationCancel", false);
+					animationMusic.SetBool ("selectedMusic", true);
+				} else if(Input.GetButton("Attack")){
+					Application.LoadLevel("MainMenu");
+				}
 			}
 			timer = 0.2f;
 		}
 	
+	}
+
+	void SaveOptions(){
+		if (musicAudio.mute) {
+			PlayerPrefs.SetInt("music", 0);
+		} else {
+			PlayerPrefs.SetInt("music", 1);
+		}
+		PlayerPrefs.SetFloat("volume", volume.value);
+	}
+
+	void LoadOptions(){
+		if (PlayerPrefs.GetInt("music")==0) {
+			animationOffMusic.SetBool ("selectedOffMusic", true);
+			animationOnMusic.SetBool ("selectedOnMusic", false);
+		} else {
+			animationOnMusic.SetBool ("selectedOnMusic", true);
+			animationOffMusic.SetBool ("selectedOffMusic", false);
+		}
+		volume.value=PlayerPrefs.GetFloat("volume");
 	}
 }
