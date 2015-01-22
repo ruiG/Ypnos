@@ -294,7 +294,7 @@ State:
   m_Motions:
   - {fileID: 0}
   m_ParentStateMachine: {fileID: 110772553}
-  m_Position: {x: 300, y: -84, z: 0}
+  m_Position: {x: 288, y: -72, z: 0}
   m_IKOnFeet: 0
   m_Mirror: 0
   m_Tag: 
@@ -341,7 +341,7 @@ StateMachine:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: Attack
-  m_DefaultState: {fileID: 110213639}
+  m_DefaultState: {fileID: 110289647}
   m_States:
   - {fileID: 110213639}
   - {fileID: 110289647}
