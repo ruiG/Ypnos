@@ -153,6 +153,12 @@ public class OptionsMenu : MonoBehaviour {
 			PlayerPrefs.SetInt("music", 1);
 		}
 		PlayerPrefs.SetFloat("volume", volume.value);
+		/*
+		if (animationFullscreen.GetBool ("selectedFullscreen")) {
+				UnityEditor.PlayerSettings.defaultIsFullScreen = true;
+		} else {
+			UnityEditor.PlayerSettings.defaultIsFullScreen = false;
+		}*/
 	}
 
 	void LoadOptions(){

@@ -8,7 +8,7 @@ AnimatorController:
   m_Name: Button
   serializedVersion: 2
   m_AnimatorParameters:
-  - m_Name: selectRestart
+  - m_Name: selectStart
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
@@ -59,7 +59,7 @@ Transition:
   m_TransitionOffset: 0
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: selectRestart
+    m_ConditionEvent: selectStart
     m_EventTreshold: 0
     m_ExitTime: 0
   m_Atomic: 1
@@ -79,7 +79,7 @@ Transition:
   m_TransitionOffset: 0
   m_Conditions:
   - m_ConditionMode: 2
-    m_ConditionEvent: selectRestart
+    m_ConditionEvent: selectStart
     m_EventTreshold: 0
     m_ExitTime: .699999988
   m_Atomic: 1
