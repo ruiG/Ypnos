@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Remover : MonoBehaviour
 {
-	public GameObject splash;
+	public GameObject deadAnimation;
 
 
 	void OnTriggerEnter2D(Collider2D col)
@@ -21,7 +21,7 @@ public class Remover : MonoBehaviour
 			}
 
 			// ... instantiate the splash where the player falls in.
-			Instantiate(splash, col.transform.position, transform.rotation);
+			//Instantiate(splash, col.transform.position, transform.rotation);
 			// ... destroy the player.
 			Destroy (col.gameObject);
 			// ... reload the level.
@@ -30,7 +30,7 @@ public class Remover : MonoBehaviour
 		else
 		{
 			// ... instantiate the splash where the enemy falls in.
-			Instantiate(splash, col.transform.position, transform.rotation);
+			//Instantiate(splash, col.transform.position, transform.rotation);
 
 			// Destroy the enemy.
 			Destroy (col.gameObject);	

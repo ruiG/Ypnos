@@ -1,0 +1,102 @@
+fileFormatVersion: 2
+guid: 27cafd74dcf260344b3a5a7e01471f19
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: arvores_3_0
+    21300002: arvores_3_1
+    21300004: arvores_3_2
+    21300006: arvores_3_3
+    21300008: arvores_3_4
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -3
+  maxTextureSize: 4096
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 75
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: arvores_3_0
+      rect:
+        serializedVersion: 2
+        x: 124
+        y: 136
+        width: 292
+        height: 556
+      alignment: 9
+      pivot: {x: .525674045, y: .0348191857}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: arvores_3_1
+      rect:
+        serializedVersion: 2
+        x: 583
+        y: 136
+        width: 267
+        height: 556
+      alignment: 9
+      pivot: {x: .475446254, y: .0466123633}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: arvores_3_2
+      rect:
+        serializedVersion: 2
+        x: 941
+        y: 110
+        width: 348
+        height: 615
+      alignment: 9
+      pivot: {x: .512434006, y: .0732766986}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: arvores_3_3
+      rect:
+        serializedVersion: 2
+        x: 1398
+        y: 197
+        width: 340
+        height: 611
+      alignment: 9
+      pivot: {x: .532273948, y: .0586699955}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: arvores_3_4
+      rect:
+        serializedVersion: 2
+        x: 1837
+        y: 154
+        width: 341
+        height: 597
+      alignment: 9
+      pivot: {x: .51709342, y: .0634187981}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 

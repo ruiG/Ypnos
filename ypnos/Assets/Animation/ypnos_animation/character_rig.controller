@@ -104,13 +104,17 @@ Transition:
   m_Name: 
   m_SrcState: {fileID: 110233166}
   m_DstState: {fileID: 110200000}
-  m_TransitionDuration: .236776561
-  m_TransitionOffset: .0595672354
+  m_TransitionDuration: .289588213
+  m_TransitionOffset: .455158591
   m_Conditions:
   - m_ConditionMode: 5
     m_ConditionEvent: Jump
     m_EventTreshold: 0
-    m_ExitTime: .744109511
+    m_ExitTime: .665401101
+  - m_ConditionMode: 4
+    m_ConditionEvent: Speed
+    m_EventTreshold: .100000001
+    m_ExitTime: .665401101
   m_Atomic: 1
   m_Solo: 0
   m_Mute: 0
@@ -124,13 +128,17 @@ Transition:
   m_Name: 
   m_SrcState: {fileID: 110233166}
   m_DstState: {fileID: 110257191}
-  m_TransitionDuration: .238754302
-  m_TransitionOffset: .29019624
+  m_TransitionDuration: .378799081
+  m_TransitionOffset: .278490424
   m_Conditions:
   - m_ConditionMode: 5
     m_ConditionEvent: Jump
     m_EventTreshold: 0
-    m_ExitTime: .761245668
+    m_ExitTime: .610711813
+  - m_ConditionMode: 3
+    m_ConditionEvent: Speed
+    m_EventTreshold: .100000001
+    m_ExitTime: 0
   m_Atomic: 0
   m_Solo: 0
   m_Mute: 0
@@ -204,7 +212,7 @@ Transition:
   m_Name: 
   m_SrcState: {fileID: 110257191}
   m_DstState: {fileID: 110233166}
-  m_TransitionDuration: .25
+  m_TransitionDuration: .295825034
   m_TransitionOffset: 0
   m_Conditions:
   - m_ConditionMode: 1
@@ -251,7 +259,7 @@ State:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: character_jump
-  m_Speed: 1
+  m_Speed: 1.25
   m_CycleOffset: 0
   m_Motions:
   - {fileID: 7400000, guid: 606a7adfb74b34e58b3e30072dce41b6, type: 2}

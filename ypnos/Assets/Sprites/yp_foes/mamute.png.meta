@@ -1,0 +1,157 @@
+fileFormatVersion: 2
+guid: ce97ed4fa42b1484ba7aa1024aca1db2
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: mth_tusk_l
+    21300002: mth_tusk_r
+    21300004: m_body
+    21300006: mth_eye
+    21300008: mth_head
+    21300010: mth_tail
+    21300012: mth_front_leg_l
+    21300014: mth_front_leg_r
+    21300016: mth_back_leg_l
+    21300018: mth_back_leg_r
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -3
+  maxTextureSize: 4096
+  textureSettings:
+    filterMode: 2
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 150
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: mth_tusk_l
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1258
+        width: 410
+        height: 273
+      alignment: 9
+      pivot: {x: .935848534, y: .236471653}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mth_tusk_r
+      rect:
+        serializedVersion: 2
+        x: 606
+        y: 1200
+        width: 411
+        height: 273
+      alignment: 9
+      pivot: {x: .912201583, y: .219469458}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: m_body
+      rect:
+        serializedVersion: 2
+        x: 1168
+        y: 876
+        width: 1026
+        height: 566
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mth_eye
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 905
+        width: 134
+        height: 215
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mth_head
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 0
+        width: 483
+        height: 815
+      alignment: 9
+      pivot: {x: .821926355, y: .653767645}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mth_tail
+      rect:
+        serializedVersion: 2
+        x: 2020
+        y: 653
+        width: 88
+        height: 188
+      alignment: 9
+      pivot: {x: -.0538163632, y: .759232521}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mth_front_leg_l
+      rect:
+        serializedVersion: 2
+        x: 881
+        y: 107
+        width: 184
+        height: 279
+      alignment: 2
+      pivot: {x: .5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mth_front_leg_r
+      rect:
+        serializedVersion: 2
+        x: 1219
+        y: 127
+        width: 182
+        height: 280
+      alignment: 2
+      pivot: {x: .5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mth_back_leg_l
+      rect:
+        serializedVersion: 2
+        x: 1568
+        y: 134
+        width: 184
+        height: 279
+      alignment: 2
+      pivot: {x: .5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mth_back_leg_r
+      rect:
+        serializedVersion: 2
+        x: 1973
+        y: 135
+        width: 184
+        height: 280
+      alignment: 2
+      pivot: {x: .5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
