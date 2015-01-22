@@ -30,6 +30,8 @@ public class GameOverMenu : MonoBehaviour {
 				} else if (Input.GetAxis ("Horizontal") < 0) {
 					animationRestart.SetBool ("selectRestart", false);
 					animationExit.SetBool ("selectExit", true);
+				} else if(Input.GetButton("Attack")){
+					Application.LoadLevel("Level");
 				}
 			} else if (animationExit.GetBool ("selectExit")) {
 				Debug.Log ("Exit Selected");
@@ -41,7 +43,7 @@ public class GameOverMenu : MonoBehaviour {
 					animationRestart.SetBool ("selectRestart", true);
 				} else if(Input.GetButton("Attack"))
 				{
-					//
+					Application.LoadLevel("ExitMenu");
 				}
 				
 			}

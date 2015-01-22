@@ -15,6 +15,11 @@ public class MainMenu : MonoBehaviour {
 		animationOptions = GameObject.Find("Options").GetComponent<Animator >();
 		animationExit = GameObject.Find("Exit").GetComponent<Animator >();
 		animationStart.SetBool("selectStart", true);
+		if (PlayerPrefs.GetInt("fullscreen")==0) {
+			Screen.fullScreen = false;
+		} else {
+			Screen.fullScreen = true;
+		}
 	}
 
 

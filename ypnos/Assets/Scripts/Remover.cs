@@ -42,6 +42,6 @@ public class Remover : MonoBehaviour
 		// ... pause briefly
 		yield return new WaitForSeconds(2);
 		// ... and then reload the level.
-		Application.LoadLevel(Application.loadedLevel);
+		Application.LoadLevel("GameOver");
 	}
 }
