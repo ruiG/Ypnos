@@ -86,6 +86,7 @@ public class OptionsMenu : MonoBehaviour {
 				} else if(Input.GetAxis ("Horizontal") < 0){
 					volume.value-=0.05f;
 				} else if(Input.GetAxis ("Horizontal") > 0){
+					volume.value+=0.05f;
 				}		
 			} else if (animationDifficulty.GetBool ("selectedDifficulty")) {
 				Debug.Log ("Difficulty Selected");
@@ -153,12 +154,14 @@ public class OptionsMenu : MonoBehaviour {
 			PlayerPrefs.SetInt("music", 1);
 		}
 		PlayerPrefs.SetFloat("volume", volume.value);
-		/*
+
 		if (animationFullscreen.GetBool ("selectedFullscreen")) {
-				UnityEditor.PlayerSettings.defaultIsFullScreen = true;
+			Screen.fullScreen = true;
+			PlayerPrefs.SetInt("fullscreen", 1);
 		} else {
-			UnityEditor.PlayerSettings.defaultIsFullScreen = false;
-		}*/
+			Screen.fullScreen = false;
+			PlayerPrefs.SetInt("fullscreen", 0);
+		}
 	}
 
 	void LoadOptions(){
@@ -170,5 +173,12 @@ public class OptionsMenu : MonoBehaviour {
 			animationOffMusic.SetBool ("selectedOffMusic", false);
 		}
 		volume.value=PlayerPrefs.GetFloat("volume");
+		if (PlayerPrefs.GetInt("fullscreen")==0) {
+			animationFullscreen.SetBool ("selectedFullscreen", false);
+			animationWindow.SetBool ("selectedWindow", true);
+		} else {
+			animationWindow.SetBool ("selectedWindow", false);
+			animationFullscreen.SetBool ("selectedFullscreen", true);
+		}
 	}
 }
