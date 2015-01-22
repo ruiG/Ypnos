@@ -86,6 +86,7 @@ public class OptionsMenu : MonoBehaviour {
 				} else if(Input.GetAxis ("Horizontal") < 0){
 					volume.value-=0.05f;
 				} else if(Input.GetAxis ("Horizontal") > 0){
+					volume.value+=0.05f;
 				}		
 			} else if (animationDifficulty.GetBool ("selectedDifficulty")) {
 				Debug.Log ("Difficulty Selected");
