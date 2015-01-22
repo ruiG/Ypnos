@@ -115,7 +115,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 179032}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 106.120003, y: -2.73000002, z: 0}
+  m_LocalPosition: {x: 105.660004, y: -2.73000002, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 479034}
@@ -181,7 +181,7 @@ EdgeCollider2D:
   m_GameObject: {fileID: 137538}
   m_Enabled: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Points:
   - {x: -.905181885, y: -.552517653}
   - {x: -.774612427, y: .550431132}
@@ -199,7 +199,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1d3ae068036c4be39e9bc98c505ef52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  splash: {fileID: 0}
+  deadAnimation: {fileID: 0}
 --- !u!212 &21279034
 SpriteRenderer:
   m_ObjectHideFlags: 1
