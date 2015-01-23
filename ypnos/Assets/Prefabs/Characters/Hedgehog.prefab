@@ -104,6 +104,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 400012}
+  - 95: {fileID: 9581744}
   m_Layer: 0
   m_Name: hh_rig
   m_TagString: Untagged
@@ -239,11 +240,11 @@ Rigidbody2D:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100014}
-  m_Mass: 2
+  m_Mass: .600000024
   m_LinearDrag: 0
   m_AngularDrag: .0500000007
   m_GravityScale: 1
-  m_FixedAngle: 1
+  m_FixedAngle: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -257,8 +258,23 @@ BoxCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Size: {x: 2.05999994, y: .959999979}
+  m_Size: {x: 2.08999991, y: .930000007}
   m_Center: {x: 0, y: -.0599999987}
+--- !u!95 &9581744
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100012}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 1
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -273,7 +289,7 @@ MonoBehaviour:
   facingRight: 0
   life: 100
   force: 400
-  maxSpeed: 4
+  maxSpeed: 6
   patrolTime: 2
   heading: -1
 --- !u!114 &11400002
