@@ -5,6 +5,7 @@ TextureImporter:
     21300000: ourico_0
     21300002: ourico_1
     21300004: ourico_2
+    21300006: ourico_3
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -75,6 +76,16 @@ TextureImporter:
         height: 217
       alignment: 2
       pivot: {x: .5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ourico_3
+      rect:
+        serializedVersion: 2
+        x: 2066
+        y: 2848
+        width: 405
+        height: 747
+      alignment: 9
+      pivot: {x: .511463761, y: .404700518}
       border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 

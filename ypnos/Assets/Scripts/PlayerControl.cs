@@ -23,13 +23,14 @@ public class PlayerControl : MonoBehaviour
 	private bool grounded = false;			// Whether or not the player is grounded.
 	private bool attack = false;
 	private Animator anim;					// Reference to the player's animator component.
-
+	private GameObject weapon;
 
 	void Awake()
 	{
 		// Setting up references.
 		groundCheck = transform.Find("groundCheck");
 		anim = transform.Find("character_rig").GetComponent<Animator>();
+		weapon = GameObject.FindGameObjectWithTag ("Weapon");
 	}
 
 
@@ -95,7 +96,7 @@ public class PlayerControl : MonoBehaviour
 		{
 			// Set the Jump animator trigger parameter.
 			anim.SetTrigger("Attack");
-			
+			weapon.SendMessage("Attacking");
 			// Play a random jump audio clip.
 			//int i = Random.Range(0, jumpClips.Length);
 			//AudioSource.PlayClipAtPoint(jumpClips[i], transform.position);
@@ -104,6 +105,7 @@ public class PlayerControl : MonoBehaviour
 			//rigidbody2D.AddForce(new Vector2(0f, jumpForce));
 			
 			// Make sure the player can't jump again until the jump conditions from Update are satisfied.
+			weapon.SendMessage("Idle");
 			attack = false;
 		}
 	}

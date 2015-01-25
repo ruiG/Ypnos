@@ -124,6 +124,7 @@ GameObject:
   - 114: {fileID: 11400000}
   - 61: {fileID: 6100002}
   - 114: {fileID: 11400002}
+  - 61: {fileID: 6167674}
   m_Layer: 0
   m_Name: Hedgehog
   m_TagString: Enemy
@@ -240,7 +241,7 @@ Rigidbody2D:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100014}
-  m_Mass: .600000024
+  m_Mass: .5
   m_LinearDrag: 0
   m_AngularDrag: .0500000007
   m_GravityScale: 1
@@ -259,7 +260,18 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Size: {x: 2.08999991, y: .930000007}
-  m_Center: {x: 0, y: -.0599999987}
+  m_Center: {x: 0, y: -.0900000036}
+--- !u!61 &6167674
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100014}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Size: {x: 2.20000005, y: 1}
+  m_Center: {x: 0, y: 0}
 --- !u!95 &9581744
 Animator:
   serializedVersion: 3
@@ -269,7 +281,7 @@ Animator:
   m_GameObject: {fileID: 100012}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7c1edb3fe0f2877439772df37b2a5505, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
@@ -288,7 +300,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   facingRight: 0
   life: 100
-  force: 400
+  force: 250
   maxSpeed: 6
   patrolTime: 2
   heading: -1

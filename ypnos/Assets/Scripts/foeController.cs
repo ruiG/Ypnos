@@ -13,9 +13,11 @@ public class foeController : MonoBehaviour {
 	public float patrolTime;
 	public int heading = -1;
 	private float timeBackup;
+	private Animator anim;	
 
 	void Start(){
 		timeBackup = patrolTime;
+		anim = transform.GetComponentInChildren<Animator> ();
 		rigidbody2D.AddForce(Vector2.right * heading * force);
 	}
 
@@ -39,14 +41,21 @@ public class foeController : MonoBehaviour {
 		}
 	}
 
-	void ApplyDamage(int damage) {
+	void ApplyDamage(int damage){
 		life -= damage;
-	
-		Debug.Log("Life :" + life);
+		//Debug.Log("Life :" + life);
+		if (life <= 0)
+			StartCoroutine("Die");
 	}
 
-	void Flip ()
-	{
+	IEnumerator Die(){
+		Destroy(GetComponent("Remover"));
+		anim.SetTrigger("Dead");
+		yield return new WaitForSeconds(1);
+		Destroy (gameObject);
+	}
+
+	void Flip (){
 		// Switch the way the player is labelled as facing.
 		facingRight = !facingRight;
 		heading *= -1;
@@ -55,4 +64,6 @@ public class foeController : MonoBehaviour {
 		theScale.x *= -1;
 		transform.localScale = theScale;
 	}
+
+
 }
