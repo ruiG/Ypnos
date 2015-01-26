@@ -4,16 +4,15 @@ using System.Collections;
 public class weaponController : MonoBehaviour {
 
 	public float damage;
-	private bool attacking;
+	//private bool attacking;
 
 	void OnTriggerEnter2D(Collider2D coll)
 	{
-
-			Debug.Log ("Hit!");
-			if (coll.gameObject.tag == "Enemy")
-					coll.gameObject.SendMessage ("ApplyDamage", damage);
+		Debug.Log ("Hit!");
+		if (coll.gameObject.tag == "Enemy")
+				coll.gameObject.SendMessage ("ApplyDamage", damage);
 	}
-
+/*
 	void Attacking(){
 		attacking = true;
 	}
@@ -21,5 +20,5 @@ public class weaponController : MonoBehaviour {
 	void Idle(){
 		attacking = false;
 	}
-
+*/
 }

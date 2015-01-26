@@ -8,11 +8,12 @@ TagManager:
   - Enemy
   - Wall
   - Obstacle
-  - Bullet
-  - BombPickup
+  - UI
   - ExplosionFX
   - HealthBar
+  - 
   - Weapon
+  - Item
   - 
   Builtin Layer 0: Default
   Builtin Layer 1: TransparentFX

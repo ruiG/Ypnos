@@ -25,6 +25,7 @@ TextureImporter:
     21300040: character_22
     21300042: leg_top
     21300044: leg_bottom
+    21300046: dead_eye
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -295,6 +296,16 @@ TextureImporter:
         height: 216
       alignment: 9
       pivot: {x: .27616781, y: .968388319}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: dead_eye
+      rect:
+        serializedVersion: 2
+        x: 2127
+        y: 3756
+        width: 183
+        height: 178
+      alignment: 0
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 

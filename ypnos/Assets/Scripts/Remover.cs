@@ -23,25 +23,8 @@ public class Remover : MonoBehaviour
 			// ... instantiate the splash where the player falls in.
 			//Instantiate(splash, col.transform.position, transform.rotation);
 			// ... destroy the player.
-			Destroy (col.gameObject);
-			// ... reload the level.
-			StartCoroutine("ReloadGame");
-		}
-		else
-		{
-			// ... instantiate the splash where the enemy falls in.
-			//Instantiate(splash, col.transform.position, transform.rotation);
-
-			// Destroy the enemy.
-			//Destroy (col.gameObject);	
+			col.SendMessage("Die");	
 		}
 	}
 
-	IEnumerator ReloadGame()
-	{			
-		// ... pause briefly
-		yield return new WaitForSeconds(2);
-		// ... and then reload the level.
-		Application.LoadLevel("GameOver");
-	}
 }

@@ -7,7 +7,7 @@ public class PlayerControl : MonoBehaviour
 	public bool facingRight = true;			// For determining which way the player is currently facing.
 	[HideInInspector]
 	public bool jump = false;				// Condition for whether the player should jump.
-
+	private bool dead = false;
 
 	public float moveForce = 365f;			// Amount of force added to move the player left and right.
 	public float maxSpeed = 5f;				// The fastest the player can travel in the x axis.
@@ -23,14 +23,23 @@ public class PlayerControl : MonoBehaviour
 	private bool grounded = false;			// Whether or not the player is grounded.
 	private bool attack = false;
 	private Animator anim;					// Reference to the player's animator component.
-	private GameObject weapon;
+	//private GameObject weapon;
+	private bool hasStick = false;
+	private bool hasStone = false;
+	private bool hasHay = false;
+	private GameObject uiStick;
+	private GameObject uiStone;
+	private GameObject uiHay;
 
 	void Awake()
 	{
 		// Setting up references.
 		groundCheck = transform.Find("groundCheck");
 		anim = transform.Find("character_rig").GetComponent<Animator>();
-		weapon = GameObject.FindGameObjectWithTag ("Weapon");
+		uiStick = GameObject.Find("ui_stickHUD");
+		uiStone = GameObject.Find("ui_stoneHUD");
+		uiHay = GameObject.Find("ui_HayHUD");
+		//weapon = GameObject.FindGameObjectWithTag ("Weapon");
 	}
 
 
@@ -50,40 +59,41 @@ public class PlayerControl : MonoBehaviour
 
 	void FixedUpdate ()
 	{
-		// Cache the horizontal input.
-		float h = Input.GetAxis("Horizontal");
+		if (!dead) {	
+			// Cache the horizontal input.
+			float h = Input.GetAxis("Horizontal");
 
-		// The Speed animator parameter is set to the absolute value of the horizontal input.
-		anim.SetFloat("Speed", Mathf.Abs(h));
 
-		// If the player is changing direction (h has a different sign to velocity.x) or hasn't reached maxSpeed yet...
-		if(h * rigidbody2D.velocity.x < maxSpeed)
-			// ... add a force to the player.
-			rigidbody2D.AddForce(Vector2.right * h * moveForce);
+			// The Speed animator parameter is set to the absolute value of the horizontal input.
+			anim.SetFloat("Speed", Mathf.Abs(h));
 
-		// If the player's horizontal velocity is greater than the maxSpeed...
-		if(Mathf.Abs(rigidbody2D.velocity.x) > maxSpeed)
-			// ... set the player's velocity to the maxSpeed in the x axis.
-			rigidbody2D.velocity = new Vector2(Mathf.Sign(rigidbody2D.velocity.x) * maxSpeed, rigidbody2D.velocity.y);
+			// If the player is changing direction (h has a different sign to velocity.x) or hasn't reached maxSpeed yet...
+			if(h * rigidbody2D.velocity.x < maxSpeed)
+				// ... add a force to the player.
+				rigidbody2D.AddForce(Vector2.right * h * moveForce);
 
-		// If the input is moving the player right and the player is facing left...
-		if(h > 0 && !facingRight)
-			// ... flip the player.
-			Flip();
-		// Otherwise if the input is moving the player left and the player is facing right...
-		else if(h < 0 && facingRight)
-			// ... flip the player.
-			Flip();
+			// If the player's horizontal velocity is greater than the maxSpeed...
+			if(Mathf.Abs(rigidbody2D.velocity.x) > maxSpeed)
+				// ... set the player's velocity to the maxSpeed in the x axis.
+				rigidbody2D.velocity = new Vector2(Mathf.Sign(rigidbody2D.velocity.x) * maxSpeed, rigidbody2D.velocity.y);
 
+			// If the input is moving the player right and the player is facing left...
+			if(h > 0 && !facingRight)
+				// ... flip the player.
+				Flip();
+			// Otherwise if the input is moving the player left and the player is facing right...
+			else if(h < 0 && facingRight)
+				// ... flip the player.
+				Flip();
+		}
 		// If the player should jump...
-		if(jump)
+		if(jump && !dead)
 		{
 			// Set the Jump animator trigger parameter.
 			anim.SetTrigger("Jump");
 
 			// Play a random jump audio clip.
-			int i = Random.Range(0, jumpClips.Length);
-			AudioSource.PlayClipAtPoint(jumpClips[i], transform.position);
+			StartCoroutine("JumpSound");
 
 			// Add a vertical force to the player.
 			rigidbody2D.AddForce(new Vector2(0f, jumpForce));
@@ -92,11 +102,11 @@ public class PlayerControl : MonoBehaviour
 			jump = false;
 		}
 
-		if(attack)
+		if(attack && !dead)
 		{
 			// Set the Jump animator trigger parameter.
 			anim.SetTrigger("Attack");
-			weapon.SendMessage("Attacking");
+			//weapon.SendMessage("Attacking");
 			// Play a random jump audio clip.
 			//int i = Random.Range(0, jumpClips.Length);
 			//AudioSource.PlayClipAtPoint(jumpClips[i], transform.position);
@@ -105,7 +115,7 @@ public class PlayerControl : MonoBehaviour
 			//rigidbody2D.AddForce(new Vector2(0f, jumpForce));
 			
 			// Make sure the player can't jump again until the jump conditions from Update are satisfied.
-			weapon.SendMessage("Idle");
+			//weapon.SendMessage("Idle");
 			attack = false;
 		}
 	}
@@ -122,6 +132,12 @@ public class PlayerControl : MonoBehaviour
 		transform.localScale = theScale;
 	}
 
+
+	IEnumerator JumpSound(){
+		int i = Random.Range(0, jumpClips.Length);
+		AudioSource.PlayClipAtPoint(jumpClips[i], transform.position);
+		yield return null;
+	}
 
 	public IEnumerator Taunt()
 	{
@@ -145,6 +161,43 @@ public class PlayerControl : MonoBehaviour
 		}
 	}
 
+
+	public void Stone(){
+		Debug.Log("I have a stone!");
+		hasStone = true;
+		uiStone.SendMessage("Captured");
+		//Play Capture Sound
+	}
+
+	public void Stick(){
+		Debug.Log("I have a stick!");
+		hasStick = true;
+		uiStick.SendMessage("Captured");
+		//Play Capture Sound
+	}
+
+	public void Hay(){
+		Debug.Log("I have a Hay!");
+		hasHay = true;
+		uiHay.SendMessage("Captured");
+		//Play Capture Sound
+	}
+
+	public void Die(){
+		dead = true;
+		anim.SetTrigger("Die");
+		StartCoroutine("ReloadGame");
+		//Play Dead Sound
+	}
+
+	
+	IEnumerator ReloadGame()
+	{
+		// ... pause briefly
+		yield return new WaitForSeconds(2);
+		// ... and then reload the level.
+		Application.LoadLevel("GameOver");
+	}
 
 	int TauntRandom()
 	{
