@@ -39,7 +39,7 @@ public class MainMenu : MonoBehaviour {
 						animationOptions.SetBool ("selectOptions", true);
 				} else if(Input.GetButton("Attack"))
 				{
-					Application.LoadLevel("Level");
+					Application.LoadLevel("ChangeNameMenu");
 				}
 			} else if (animationOptions.GetBool ("selectOptions")) {
 				Debug.Log ("Options Selected");
