@@ -105,8 +105,8 @@ RectTransform:
   m_RootOrder: 2
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: 0, y: -75}
-  m_SizeDelta: {x: 341.600006, y: 110.099998}
+  m_AnchoredPosition: {x: -200, y: -161}
+  m_SizeDelta: {x: 341.649994, y: 197.5}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &508377229
 MonoBehaviour:
@@ -123,23 +123,25 @@ MonoBehaviour:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FontData:
     m_Font: {fileID: 12800000, guid: 27d6794804476834f9e71f382af796f0, type: 3}
-    m_FontSize: 18
+    m_FontSize: 8
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 10
     m_MaxSize: 40
-    m_Alignment: 4
+    m_Alignment: 3
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: 'Daniel Teixeira
+    m_LineSpacing: 1.39999998
+  m_Text: 'Developers:
+
+    Daniel Teixeira
 
     Guilherme Martins
 
     Monica freitas
 
-    Rui GonSSalves'
+    Rui Goncalves'
 --- !u!222 &508377230
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -380,6 +382,7 @@ GameObject:
   - 223: {fileID: 1829943793}
   - 114: {fileID: 1829943792}
   - 114: {fileID: 1829943791}
+  - 114: {fileID: 1829943794}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -434,7 +437,7 @@ MonoBehaviour:
   m_Script: {fileID: 1980459831, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
@@ -461,6 +464,17 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
+--- !u!114 &1829943794
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1829943789}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56071deb0a4c8a84eacaf05e6ec0dcb7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1905998645
 GameObject:
   m_ObjectHideFlags: 0
