@@ -12,6 +12,8 @@ public class PlayerControl : MonoBehaviour
 	public float moveForce = 365f;			// Amount of force added to move the player left and right.
 	public float maxSpeed = 5f;				// The fastest the player can travel in the x axis.
 	public AudioClip[] jumpClips;			// Array of clips for when the player jumps.
+	public AudioClip[] attackClips;			// Array of clips for when the player jumps.
+	public AudioClip deathClip;
 	public float jumpForce = 1000f;			// Amount of force added when the player jumps.
 	public AudioClip[] taunts;				// Array of clips for when the player taunts.
 	public float tauntProbability = 50f;	// Chance of a taunt happening.
@@ -106,6 +108,8 @@ public class PlayerControl : MonoBehaviour
 		{
 			// Set the Jump animator trigger parameter.
 			anim.SetTrigger("Attack");
+			if(anim.GetFloat("Speed") < 0.3f)
+				StartCoroutine("AttackSound");
 			//weapon.SendMessage("Attacking");
 			// Play a random jump audio clip.
 			//int i = Random.Range(0, jumpClips.Length);
@@ -132,9 +136,22 @@ public class PlayerControl : MonoBehaviour
 
 	IEnumerator JumpSound(){
 		int i = Random.Range(0, jumpClips.Length);
-		AudioSource.PlayClipAtPoint(jumpClips[i], transform.position);
+		AudioSource.PlayClipAtPoint(jumpClips[i], transform.position, 0.3f);
 		yield return null;
 	}
+
+	IEnumerator AttackSound(){
+		int i = Random.Range(0, attackClips.Length);
+		AudioSource.PlayClipAtPoint(attackClips[i], transform.position, 1.0f);
+		yield return null;
+	}
+
+	IEnumerator DeathSound(){
+		AudioSource.PlayClipAtPoint(deathClip, transform.position);
+		yield return null;
+	}
+
+ 
 
 	public IEnumerator Taunt()
 	{
@@ -183,7 +200,7 @@ public class PlayerControl : MonoBehaviour
 		dead = true;
 		anim.SetTrigger("Die");
 		StartCoroutine("ReloadGame");
-		//Play Dead Sound
+		StartCoroutine ("DeathSound");
 	}
 	
 	IEnumerator ReloadGame()

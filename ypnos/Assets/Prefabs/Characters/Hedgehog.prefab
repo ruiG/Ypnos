@@ -299,7 +299,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   facingRight: 0
-  life: 100
+  hitClip: {fileID: 8300000, guid: 9b86e87a6f75c004d9beda96c7b45b27, type: 3}
+  deathClip: {fileID: 8300000, guid: f2ed8758e58e7624bbe862061a8482c7, type: 3}
+  life: 200
   force: 250
   maxSpeed: 6
   patrolTime: 2

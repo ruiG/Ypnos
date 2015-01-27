@@ -332,6 +332,7 @@ MonoBehaviour:
   m_Script: {fileID: 1301386320, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_Priority: 3
   ignoreReversedGraphics: 1
   blockingObjects: 0
   m_BlockingMask:
@@ -386,6 +387,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6cd1b9410679c44cb4fd1fc20dffe4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  wakeupClip: {fileID: 8300000, guid: d9b3b0e2b7ca646fa8f0624861c6c7be, type: 3}
 --- !u!1 &1054974985
 GameObject:
   m_ObjectHideFlags: 0

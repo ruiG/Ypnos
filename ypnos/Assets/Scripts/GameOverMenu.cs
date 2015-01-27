@@ -5,7 +5,7 @@ public class GameOverMenu : MonoBehaviour {
 	
 	protected Animator animationRestart;
 	protected Animator animationExit;
-	
+	public AudioClip wakeupClip;
 	private float timer = 0.2f;
 	
 	void Start()
@@ -13,6 +13,7 @@ public class GameOverMenu : MonoBehaviour {
 		animationRestart = GameObject.Find("Restart").GetComponent<Animator >();
 		animationExit = GameObject.Find("Exit").GetComponent<Animator >();
 		animationRestart.SetBool("selectRestart", true);
+		AudioSource.PlayClipAtPoint(wakeupClip, transform.position, 0.7f);
 	}
 	
 	

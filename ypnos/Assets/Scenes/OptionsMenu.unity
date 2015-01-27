@@ -406,6 +406,7 @@ MonoBehaviour:
   m_Script: {fileID: 1301386320, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_Priority: 3
   ignoreReversedGraphics: 1
   blockingObjects: 0
   m_BlockingMask:
@@ -949,7 +950,7 @@ AudioSource:
   m_GameObject: {fileID: 880292413}
   m_Enabled: 1
   serializedVersion: 3
-  m_audioClip: {fileID: 8300000, guid: 317552566dd1ff9488d5d34e0c3ba4f4, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 3a06971757741714f99b9246c71e5153, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1

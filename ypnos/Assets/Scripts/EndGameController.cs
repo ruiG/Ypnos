@@ -4,6 +4,7 @@ using System.Collections;
 public class EndGameController : MonoBehaviour {
 
 	GameObject platforms;
+	public AudioClip platformClip;
 
 	void Start(){
 		platforms = GameObject.FindGameObjectWithTag("Finish");
@@ -17,8 +18,14 @@ public class EndGameController : MonoBehaviour {
 				   coll.GetComponent<PlayerControl>().hasStone){
 					platforms.GetComponent<Animator>().SetTrigger("EndGame");
 					this.GetComponent<Animator>().SetTrigger("MakeFire");
+					StartCoroutine("PlatformSpawn");
 				}
 			}
 		}
+	}
+
+	IEnumerator PlatformSpawn(){
+		AudioSource.PlayClipAtPoint(platformClip, transform.position, 1f);
+		yield return null;
 	}
 }
