@@ -24,9 +24,9 @@ public class PlayerControl : MonoBehaviour
 	private bool attack = false;
 	private Animator anim;					// Reference to the player's animator component.
 	//private GameObject weapon;
-	private bool hasStick = false;
-	private bool hasStone = false;
-	private bool hasHay = false;
+	public bool hasStick = false;
+	public bool hasStone = false;
+	public bool hasHay = false;
 	private GameObject uiStick;
 	private GameObject uiStone;
 	private GameObject uiHay;
@@ -38,7 +38,7 @@ public class PlayerControl : MonoBehaviour
 		anim = transform.Find("character_rig").GetComponent<Animator>();
 		uiStick = GameObject.Find("ui_stickHUD");
 		uiStone = GameObject.Find("ui_stoneHUD");
-		uiHay = GameObject.Find("ui_HayHUD");
+		uiHay = GameObject.Find("ui_hayHUD");
 		//weapon = GameObject.FindGameObjectWithTag ("Weapon");
 	}
 
@@ -118,20 +118,17 @@ public class PlayerControl : MonoBehaviour
 			//weapon.SendMessage("Idle");
 			attack = false;
 		}
-	}
-	
+	}	
 	
 	void Flip ()
 	{
 		// Switch the way the player is labelled as facing.
 		facingRight = !facingRight;
-
 		// Multiply the player's x local scale by -1.
 		Vector3 theScale = transform.localScale;
 		theScale.x *= -1;
 		transform.localScale = theScale;
 	}
-
 
 	IEnumerator JumpSound(){
 		int i = Random.Range(0, jumpClips.Length);
@@ -161,7 +158,6 @@ public class PlayerControl : MonoBehaviour
 		}
 	}
 
-
 	public void Stone(){
 		Debug.Log("I have a stone!");
 		hasStone = true;
@@ -189,7 +185,6 @@ public class PlayerControl : MonoBehaviour
 		StartCoroutine("ReloadGame");
 		//Play Dead Sound
 	}
-
 	
 	IEnumerator ReloadGame()
 	{
