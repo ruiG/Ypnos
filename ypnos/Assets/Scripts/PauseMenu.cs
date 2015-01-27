@@ -1,22 +1,19 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Pauser : MonoBehaviour {
-	private bool paused = false;
-
+public class PauseMenu : MonoBehaviour {
 	public GameObject pause;
-	
+	public bool isPause;
+
 	protected Animator animationResume;
 	protected Animator animationOptions;
 	protected Animator animationMainMenu;
 	protected Animator animationExit;
 
-	private float timer = 0.2f;
-	
-	
+
 	// Use this for initialization
 	void Start () {
-		paused = false;
+		isPause = false;
 
 		pause.SetActive (false);
 		/*
@@ -26,28 +23,27 @@ public class Pauser : MonoBehaviour {
 		animationExit = GameObject.Find("Exit").GetComponent<Animator >();
 
 		animationResume.SetBool ("selectResume", true);*/
-		
+
 	}
 	
 	// Update is called once per frame
 	void Update () {
 
+		if (Input.GetButton("Cancel")){
+			Debug.Log ("Res");
+			isPause = !isPause;
+			if(isPause){
+				pause.SetActive (true);
+				Time.timeScale = 0;
+			}
+			else{
+				pause.SetActive (false);
+				Time.timeScale = 1;
+			}
 
-		if(Input.GetButtonDown("Cancel"))
-		{
-			paused = !paused;
 		}
 
-		if (paused) {
-						Time.timeScale = 0;
-						pause.SetActive (true);
-				} else {
-						Time.timeScale = 1;
-						pause.SetActive (false);
-				}
-
-
-		if (paused) {
+		if (isPause) {
 			if (GameObject.Find("Resume").GetComponent<Animator >().GetBool ("selectResume")) {
 				Debug.Log ("Resume Selected");
 				if (Input.GetAxis ("Vertical") > 0) {
@@ -59,9 +55,8 @@ public class Pauser : MonoBehaviour {
 					GameObject.Find("Options").GetComponent<Animator >().SetBool ("selectOptions", true);
 				} else if(Input.GetButton("Attack"))
 				{
-					Time.timeScale = 1;
-					pause.SetActive (false);
-					paused = !paused;
+					//Time.timeScale = 1;
+					//pause.SetActive (false);
 				}
 			} else if (GameObject.Find("Options").GetComponent<Animator >().GetBool ("selectOptions")) {
 				Debug.Log ("Options Selected");
@@ -103,4 +98,5 @@ public class Pauser : MonoBehaviour {
 			}
 		}
 	}
+	
 }
